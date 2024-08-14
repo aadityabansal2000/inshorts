@@ -17,7 +17,9 @@ app.use(bodyParser.json({ extended: true }));
 app.use('/', route);
 
 const PORT = process.env.port || 8000;
-const URL=process.env.MONGODB_URI; 
+const username = process.env.DB_USERNAME;
+const password = process.env.DB_PASSWORD;
+const URL=`mongodb+srv://${username}:${password}@clone-inshorts.1j42a.mongodb.net/inshortsclone?retryWrites=true&w=majority&appName=clone-inshorts`; 
 Connection(URL);
 
 app.listen(PORT, () => console.log(`Server is running successfully on PORT ${PORT}`));
