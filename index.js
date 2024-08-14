@@ -17,7 +17,7 @@ app.use(bodyParser.json({ extended: true }));
 app.use('/', route);
 
 const PORT = process.env.port || 8000;
-const URL=process.env.MONGODB_URL; 
+const URL=process.env.MONGODB_URI; 
 Connection(URL);
 
 app.listen(PORT, () => console.log(`Server is running successfully on PORT ${PORT}`));
